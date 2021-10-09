@@ -1,16 +1,26 @@
 {
   "name": "ab-test-publish-pack",
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/FlexBox.tsx",
+  "module": "dist/FlexBox.tsx",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbilityMaster/flex-box"
+  },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "typescript": "^4.4.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "build": "rm -rf dist && set NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "lib": "babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -33,6 +43,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
     "@types/react": "^17.0.27",
     "@types/react-dom": "^17.0.9",
     "babel-cli": "^6.26.0",
